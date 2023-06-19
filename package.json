@@ -1,0 +1,26 @@
+{
+  "name": "zoom-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/speech": "^5.5.0",
+    "@google-cloud/text-to-speech": "^4.2.2",
+    "assemblyai": "^1.0.1",
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "google-tts-api": "^2.0.2",
+    "nodemon": "^1.17.2",
+    "openai": "^3.3.0",
+    "sdk": "^0.5.0",
+    "websockets": "^0.2.0",
+    "ws": "^8.13.0",
+    "zoomus": "^0.1.4"
+  }
+}

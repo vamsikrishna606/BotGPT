@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Zoom Meeting Bot</h1>
+    <form id="meetingForm">
+      <input type="text" id="meetingLinkInput" placeholder="Enter Meeting Link">
+      <button type="submit">Join Meeting</button>
+    </form>
+
+    <script>
+      const meetingForm = document.getElementById('meetingForm');
+      const meetingLinkInput = document.getElementById('meetingLinkInput');
+
+      meetingForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const meetingLink = meetingLinkInput.value;
+
+        // Call the backend API endpoint to initiate the speech-to-text conversion and join the Zoom meeting
+        fetch('/startMeeting', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ meetingLink }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            if (data.success) {
+              window.location.href = '/meetingStarted.html'; // Redirect to the meeting started page
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      });
+    </script>
+  </body>
+</html>
